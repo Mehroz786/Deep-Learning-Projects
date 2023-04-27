@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articel Prediction</title>
+    
+ </head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    background-color: rgb(35, 138, 228);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.formdiv{
+    background-color: white;
+    width: 70%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    border-radius: 5px;
+}
+
+.formdiv form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#given_article{
+    height: 70px;
+    text-align: center;
+}
+
+.formdiv input[type = "submit"]{
+    height: 30px;
+    text-align: center;
+    margin-top: 1%;
+    width: 20%;
+    color: brown;
+}
+
+
+h1{
+    margin-left: 28%;
+    margin-top: 1%;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Article Prediction Using Reuters Deep Learning Model</h1>        
+        <div class="formdiv">
+        <form  class = "formactual" action="{{url_for('predict')}}"method = "post">
+            <input type="text" id ="given_article" name = "review" placeholder="Enter the Article" >
+            <input type = "submit" value="Predict">
+            <h2>Results</h2>
+            <label for="category_name">Category of the Article</label>
+            <input type="text" id = "category_name"name="belongs" value="{{category}}"> 
+            <label for="percentage_of_match">Percentage of Match</label>
+            <input type="text" id = "percentage_of_match"name="belongs" value="{{percentage}}"> 
+           
+        </form>
+    </div>
+</div>
+</body>
+</html>
