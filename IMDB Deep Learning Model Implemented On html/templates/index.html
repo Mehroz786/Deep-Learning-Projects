@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review</title>
+    
+ </head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    background-color: rgb(35, 138, 228);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.formdiv{
+    background-color: white;
+    width: 60%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    border-radius: 5px;
+}
+
+.formdiv form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.formdiv input[type = "text"]{
+    height: 50px;
+    text-align: center;
+}
+
+.formdiv input[type = "submit"]{
+    height: 30px;
+    text-align: center;
+    margin-top: 1%;
+    width: 20%;
+    color: brown;
+}
+
+
+h1{
+    margin-left: 28%;
+    margin-top: 1%;
+    color: rgb(255, 255, 255);
+}
+
+h2{
+    width: auto;
+    color: brown;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Movie Review Prediction </h1>        
+        <div class="formdiv">
+        <form  class = "formactual" action="{{url_for('predict')}}"method = "post">
+            <input type="text" name = "review" placeholder="enter review" >
+            <input type = "submit" value="Predict">
+
+            <h2>{{prediction_text}}</h2>
+        </form>
+    </div>
+</div>
+</body>
+</html>
